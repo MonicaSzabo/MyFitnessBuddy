@@ -92,6 +92,7 @@ class MealController extends Controller
         //return view('meal', compact('meal'));
 
         $meal = Meal::find($id);
+        //THIS NEEDS TO INSTEAD APPEND TO THE JSON, NOT REPLACE IT
         $meal->ingredients = json_encode([$request->ingredientName, $request->protein, $request->carbs, $request->fat]);
 
         $meal->save();
